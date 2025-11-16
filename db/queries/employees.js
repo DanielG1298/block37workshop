@@ -29,7 +29,7 @@ export async function getEmployees() {
 export async function getEmployee(id) {
   const sql = `
   SELECT * FROM employees
-  WHERE is = $1`;
+  WHERE id = $1`;
   const { rows: [employee] } = await db.query(sql, [id]);
   return employee;
 }
